@@ -1,0 +1,14 @@
+{
+  "name": "SerialDevicePeripheral",
+  "keywords": "serial, usb, device, communication, protocol",
+  "description": "Creates USB HID like characteristics for Serial Devices",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/circuitsforfun/SerialDevicePeripheral",
+    "branch": "master"
+  },
+  "examples": "examples/*/*.ino",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
