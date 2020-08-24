@@ -17,7 +17,7 @@ While there are many different serial protocol libraries available, most of them
 I wanted the host side of things to be as easy and robust as possible while avoiding the added complication of writing a custom USB device and host driver.
 This library along with the [SerialDeviceHost Library](https://github.com/circuitsforfun/SerialDeviceHost) attempts to fulfill those needs.
 
-The data container essentially works like a very crude primitive version of JSON, you can easily add new key value pairs or modify existing ones and easily mix and match data types but unlike JSON there is no nested or hierarchical aspect to the data structure everything is completely flat.
+The data container essentially works like a very primitive version of JSON, you can easily add new key value pairs or modify existing ones and easily mix and match data types but unlike JSON there is no nested or hierarchical aspect to the data structure everything is completely flat.
 
 This library relies heavily on the C++ STL vector class and is not particularly great for performance when used on a microcontroller with limited resources.
 It performs fairly well on something like an ESP32 or other fairly decent 32-bit microcontroller with a good clock speed and plenty of memory.

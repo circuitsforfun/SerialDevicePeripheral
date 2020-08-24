@@ -133,7 +133,13 @@ namespace rw {
                                 sendInfoPacket();
                                 data_available_ = false;
                                 return;
-                            } else if (cmd == (uint8_t) SD_COMMAND_SEND_DATA) {
+                            }
+							else if (cmd == (uint8_t)SD_COMMAND_STOP_DATA)
+							{
+								stop_data_ = true;
+								stop_timeout_ = millis();
+							}
+							else if (cmd == (uint8_t) SD_COMMAND_SEND_DATA) {
                                 if (in_packet_.size() > 0) {
                                     deserialize(in_packet_);
                                     data_available_ = true;
@@ -151,6 +157,13 @@ namespace rw {
         }
 
         void SerialDevicePeripheral::sendPacket(kSudCommandType cmd) {
+			if (stop_data_)
+			{
+				if (millis() - stop_timeout_ < 4000)
+					return;
+				else
+					stop_data_ = false;
+			}
             out_packet_.clear();
             uint16_t pSize = 0;
             cmd_ = cmd;

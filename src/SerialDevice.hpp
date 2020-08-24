@@ -9,7 +9,8 @@ namespace rw {
     typedef enum kSudCommandType {
       SD_COMMAND_GET_INFO = 0x50,
       SD_COMMAND_SEND_DATA = 0x64,
-      SD_COMMAND_SEND_INFO = 0x69
+      SD_COMMAND_SEND_INFO = 0x69,
+	  SD_COMMAND_STOP_DATA = 0x72
     } kSudCommandType;
 
     typedef struct deviceDescriptor {

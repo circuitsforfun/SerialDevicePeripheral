@@ -57,6 +57,8 @@ namespace rw {
           uint8_t cmd_{};
           bool data_available_;
 		  bool data_error_;
+		  bool stop_data_;
+		  long stop_timeout_;
           CRC16 crc_;
         };
     } // End mdt namespace
